@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowRight, Zap, Layers, Sparkles } from 'lucide-react';
+import { cn } from '@/utils/cn';
 
 export default function Home() {
   return (
