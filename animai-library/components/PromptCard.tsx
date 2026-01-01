@@ -27,6 +27,7 @@ export function PromptCard({ component }: PromptCardProps) {
 
     const difficultyColors = {
         Basic: 'text-emerald-400 border-emerald-400/20 bg-emerald-400/10',
+        Intermediate: 'text-blue-400 border-blue-400/20 bg-blue-400/10',
         Advanced: 'text-amber-400 border-amber-400/20 bg-amber-400/10',
         Elite: 'text-rose-400 border-rose-400/20 bg-rose-400/10',
     };

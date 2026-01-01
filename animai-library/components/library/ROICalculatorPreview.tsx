@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef, useState, useMemo } from 'react';
+import React, { useRef, useState, useMemo, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { TextPlugin } from 'gsap/TextPlugin';
@@ -13,10 +13,32 @@ export function ROICalculatorPreview() {
     const container = useRef<HTMLDivElement>(null);
     const [value, setValue] = useState(5000); // Monthly spending
     const savingsRef = useRef<HTMLSpanElement>(null);
+    const [isInitialized, setIsInitialized] = useState(false);
 
     const annualSavings = useMemo(() => value * 0.35 * 12, [value]);
 
+    // Initialize on mount
+    useEffect(() => {
+        if (savingsRef.current && !isInitialized) {
+            savingsRef.current.innerHTML = new Intl.NumberFormat('en-US', {
+                style: 'currency',
+                currency: 'USD',
+                maximumFractionDigits: 0
+            }).format(annualSavings);
+
+            // Initialize bar chart on first load
+            gsap.set(".bar-growth", {
+                scaleY: value / 10000,
+                transformOrigin: "bottom"
+            });
+
+            setIsInitialized(true);
+        }
+    }, [annualSavings, isInitialized, value]);
+
     useGSAP(() => {
+        if (!isInitialized) return;
+
         // Animate the savings number
         gsap.to(savingsRef.current, {
             duration: 0.5,
@@ -41,7 +63,7 @@ export function ROICalculatorPreview() {
             ease: "elastic.out(1, 0.3)",
             transformOrigin: "bottom"
         });
-    }, { dependencies: [annualSavings], scope: container });
+    }, { dependencies: [annualSavings, isInitialized], scope: container });
 
     return (
         <div ref={container} className="flex flex-col gap-6 p-6 bg-zinc-950 rounded-xl border border-zinc-800 shadow-2xl">

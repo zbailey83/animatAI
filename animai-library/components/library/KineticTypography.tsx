@@ -4,6 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export function KineticTypography() {
+    const [key, setKey] = React.useState(0);
     const text = "ANIMATE";
     const letters = text.split("");
 
@@ -34,8 +35,12 @@ export function KineticTypography() {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center p-8 bg-zinc-950 rounded-xl border border-zinc-800 overflow-hidden min-h-[160px]">
+        <div
+            className="flex flex-col items-center justify-center p-8 bg-zinc-950 rounded-xl border border-zinc-800 overflow-hidden min-h-[160px] cursor-pointer"
+            onMouseEnter={() => setKey(prev => prev + 1)}
+        >
             <motion.div
+                key={key}
                 className="flex overflow-hidden"
                 variants={container}
                 initial="hidden"
@@ -53,6 +58,7 @@ export function KineticTypography() {
                 ))}
             </motion.div>
             <motion.p
+                key={`subtitle-${key}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1 }}

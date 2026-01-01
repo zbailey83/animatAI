@@ -7,7 +7,7 @@ export interface ComponentSchema {
   title: string;
   category: 'Typography' | 'Pricing' | 'Scroll' | 'Interactions' | 'Nav';
   engine: AnimationEngine;
-  difficulty: 'Basic' | 'Advanced' | 'Elite';
+  difficulty: 'Basic' | 'Intermediate' | 'Advanced' | 'Elite';
   intent: string;
   features: string[];
   logicHooks: string[];

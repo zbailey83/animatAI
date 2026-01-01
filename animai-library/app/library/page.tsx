@@ -25,13 +25,99 @@ export default function LibraryPage() {
                     </p>
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {registry.map((comp) => (
-                        <PromptCard key={comp.id} component={comp} />
-                    ))}
+                <div className="space-y-32">
+                    {/* Typography Section */}
+                    <section>
+                        <div className="mb-10 flex items-end justify-between border-b border-zinc-800 pb-6">
+                            <div>
+                                <h2 className="text-3xl font-bold text-white tracking-tight mb-2">Typography & Brand</h2>
+                                <p className="text-zinc-500">Kinetic text effects that define digital identity.</p>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                {registry.filter(c => c.category === 'Typography').length} COMPONENTS
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {registry.filter(c => c.category === 'Typography').map((comp) => (
+                                <PromptCard key={comp.id} component={comp} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Navigation Section */}
+                    <section>
+                        <div className="mb-10 flex items-end justify-between border-b border-zinc-800 pb-6">
+                            <div>
+                                <h2 className="text-3xl font-bold text-white tracking-tight mb-2">Navigation & Layout</h2>
+                                <p className="text-zinc-500">Interactive menus and structural fluidity.</p>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                {registry.filter(c => c.category === 'Nav').length} COMPONENTS
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {registry.filter(c => c.category === 'Nav').map((comp) => (
+                                <PromptCard key={comp.id} component={comp} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Pricing Section */}
+                    <section>
+                        <div className="mb-10 flex items-end justify-between border-b border-zinc-800 pb-6">
+                            <div>
+                                <h2 className="text-3xl font-bold text-white tracking-tight mb-2">SaaS Conversion</h2>
+                                <p className="text-zinc-500">High-trust pricing tables and calculators.</p>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                {registry.filter(c => c.category === 'Pricing').length} COMPONENTS
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {registry.filter(c => c.category === 'Pricing').map((comp) => (
+                                <PromptCard key={comp.id} component={comp} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Scroll Section */}
+                    <section>
+                        <div className="mb-10 flex items-end justify-between border-b border-zinc-800 pb-6">
+                            <div>
+                                <h2 className="text-3xl font-bold text-white tracking-tight mb-2">Immersive Scroll</h2>
+                                <p className="text-zinc-500">Scrollytelling experiences that capture attention.</p>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                {registry.filter(c => c.category === 'Scroll').length} COMPONENTS
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {registry.filter(c => c.category === 'Scroll').map((comp) => (
+                                <PromptCard key={comp.id} component={comp} />
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Interactions Section */}
+                    <section>
+                        <div className="mb-10 flex items-end justify-between border-b border-zinc-800 pb-6">
+                            <div>
+                                <h2 className="text-3xl font-bold text-white tracking-tight mb-2">Micro-Interactions</h2>
+                                <p className="text-zinc-500">The "Secret Sauce" of premium feel.</p>
+                            </div>
+                            <span className="text-xs font-mono text-zinc-600 uppercase tracking-widest">
+                                {registry.filter(c => c.category === 'Interactions').length} COMPONENTS
+                            </span>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {registry.filter(c => c.category === 'Interactions').map((comp) => (
+                                <PromptCard key={comp.id} component={comp} />
+                            ))}
+                        </div>
+                    </section>
 
                     {/* Placeholder for "Coming Soon" */}
-                    <div className="flex flex-col items-center justify-center p-8 rounded-2xl border border-zinc-800 border-dashed bg-zinc-900/20 group hover:border-zinc-700 transition-colors h-[300px]">
+                    <div className="flex flex-col items-center justify-center p-8 rounded-2xl border border-zinc-800 border-dashed bg-zinc-900/20 group hover:border-zinc-700 transition-colors h-[200px]">
                         <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-500 group-hover:scale-110 transition-transform">
                             ?
                         </div>
