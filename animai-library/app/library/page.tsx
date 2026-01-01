@@ -25,6 +25,36 @@ export default function LibraryPage() {
                     </p>
                 </header>
 
+                {/* Featured Showcase - One from each category */}
+                <section className="mb-32">
+                    <div className="mb-12 text-center">
+                        <h2 className="text-4xl font-bold text-white tracking-tight mb-3">Featured Components</h2>
+                        <p className="text-zinc-500 text-lg">Live previews from each category</p>
+                    </div>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                        {/* Typography Feature */}
+                        {registry.filter(c => c.id === 'typo-hero-001').map((comp) => (
+                            <PromptCard key={comp.id} component={comp} />
+                        ))}
+                        {/* Pricing Feature */}
+                        {registry.filter(c => c.id === 'roi-calc-029').map((comp) => (
+                            <PromptCard key={comp.id} component={comp} />
+                        ))}
+                        {/* Navigation Feature */}
+                        {registry.filter(c => c.id === 'nav-dock-012').map((comp) => (
+                            <PromptCard key={comp.id} component={comp} />
+                        ))}
+                        {/* Scroll Feature */}
+                        {registry.filter(c => c.id === 'scroll-parallax-033').map((comp) => (
+                            <PromptCard key={comp.id} component={comp} />
+                        ))}
+                        {/* Interactions Feature */}
+                        {registry.filter(c => c.id === 'inter-magnet-041').map((comp) => (
+                            <PromptCard key={comp.id} component={comp} />
+                        ))}
+                    </div>
+                </section>
+
                 <div className="space-y-32">
                     {/* Typography Section */}
                     <section>
