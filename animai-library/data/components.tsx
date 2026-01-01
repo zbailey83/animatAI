@@ -14,6 +14,43 @@ import { PulsePricing } from '@/components/library/PulsePricing';
 import { InfiniteBrandCloud } from '@/components/library/InfiniteBrandCloud';
 import { GlassmorphGlare } from '@/components/library/GlassmorphGlare';
 import { DynamicMesh } from '@/components/library/DynamicMesh';
+import { VariableFontWeight } from '@/components/library/VariableFontWeight';
+import { SharedLayoutBento } from '@/components/library/SharedLayoutBento';
+import { CommandPalette } from '@/components/library/CommandPalette';
+import { CurrencyToggle } from '@/components/library/CurrencyToggle';
+import { HoldToConfirm } from '@/components/library/HoldToConfirm';
+import { TestimonialWall } from '@/components/library/TestimonialWall';
+import { LayeredCardReveal } from '@/components/library/LayeredCardReveal';
+import { ProgressSVGPath } from '@/components/library/ProgressSVGPath';
+import { SVGDonutChart } from '@/components/library/SVGDonutChart';
+import { StackingCardGallery } from '@/components/library/StackingCardGallery';
+// New preview components
+import { LiquidTextDistortion } from '@/components/library/LiquidTextDistortion';
+import { StaggeredSplitText } from '@/components/library/StaggeredSplitText';
+import { CharacterFloat } from '@/components/library/CharacterFloat';
+import { HighlightReveal } from '@/components/library/HighlightReveal';
+import { ElasticDrawer } from '@/components/library/ElasticDrawer';
+import { AppleIntelligenceRipple } from '@/components/library/AppleIntelligenceRipple';
+import { FloatingActionOrb } from '@/components/library/FloatingActionOrb';
+import { StickyComparisonMatrix } from '@/components/library/StickyComparisonMatrix';
+import { MultiStepForm } from '@/components/library/MultiStepForm';
+import { LivePollBars } from '@/components/library/LivePollBars';
+import { SlotMachineReveal } from '@/components/library/SlotMachineReveal';
+import { TrustTicker } from '@/components/library/TrustTicker';
+import { HorizontalCanvasScroll } from '@/components/library/HorizontalCanvasScroll';
+import { SectionZoom } from '@/components/library/SectionZoom';
+import { StickyFeatureSpotlight } from '@/components/library/StickyFeatureSpotlight';
+import { VideoPeek } from '@/components/library/VideoPeek';
+import { ProgressCircle } from '@/components/library/ProgressCircle';
+import { AccordionAutoScroll } from '@/components/library/AccordionAutoScroll';
+import { GravityIcons } from '@/components/library/GravityIcons';
+import { GrainTransition } from '@/components/library/GrainTransition';
+import { CursorBlobSpotlight } from '@/components/library/CursorBlobSpotlight';
+import { NoiseImageReveal } from '@/components/library/NoiseImageReveal';
+import { NodeParticles } from '@/components/library/NodeParticles';
+import { TextPathFollower } from '@/components/library/TextPathFollower';
+import { BreadcrumbProgress } from '@/components/library/BreadcrumbProgress';
+import { InteractiveSitemap } from '@/components/library/InteractiveSitemap';
 
 export const registry: ComponentSchema[] = [
     // --- Typography & Brand Identity ---
@@ -74,7 +111,8 @@ export const registry: ComponentSchema[] = [
             "Smooth weight transitions (100-900)",
             "ScrollTrigger integration"
         ],
-        logicHooks: ["ScrollTrigger", "useGSAP", "gsap.to"]
+        logicHooks: ["ScrollTrigger", "useGSAP", "gsap.to"],
+        previewComponent: <VariableFontWeight />
     },
     {
         id: "typo-glitch-006",
@@ -134,7 +172,8 @@ export const registry: ComponentSchema[] = [
             "Sibling element flow handling",
             "Smooth expand/collapse states"
         ],
-        logicHooks: ["layoutId", "AnimatePresence", "layout prop"]
+        logicHooks: ["layoutId", "AnimatePresence", "layout prop"],
+        previewComponent: <SharedLayoutBento />
     },
     {
         id: "nav-dock-012",
@@ -207,7 +246,8 @@ export const registry: ComponentSchema[] = [
             "Backdrop blur overlay",
             "Fuzzy search integration ready"
         ],
-        logicHooks: ["AnimatePresence", "useEffect", "backdrop-filter"]
+        logicHooks: ["AnimatePresence", "useEffect", "backdrop-filter"],
+        previewComponent: <CommandPalette />
     },
 
     // --- SaaS Pricing & Conversion ---
@@ -253,7 +293,8 @@ export const registry: ComponentSchema[] = [
             "useMotionValue for smooth transitions",
             "Multi-currency support"
         ],
-        logicHooks: ["useMotionValue", "useTransform", "AnimatePresence"]
+        logicHooks: ["useMotionValue", "useTransform", "AnimatePresence"],
+        previewComponent: <CurrencyToggle />
     },
     {
         id: "price-matrix-024",
@@ -273,15 +314,16 @@ export const registry: ComponentSchema[] = [
         id: "price-hold-025",
         title: "Hold-to-Confirm Action",
         category: "Pricing",
-        engine: "GSAP",
+        engine: "MOTION",
         difficulty: "Intermediate",
         intent: "A destructive action button that requires holding for 2 seconds to confirm.",
         features: [
-            "Progress ring animation",
+            "Progress bar animation",
             "Reversible on mouse up",
-            "Haptic feedback ready"
+            "Visual confirmation state"
         ],
-        logicHooks: ["useGSAP", "gsap.timeline", "MouseEvents"]
+        logicHooks: ["useState", "MouseEvents", "motion.div"],
+        previewComponent: <HoldToConfirm />
     },
     {
         id: "price-testimonial-026",
@@ -295,7 +337,8 @@ export const registry: ComponentSchema[] = [
             "Perspective container",
             "Smooth spring transitions"
         ],
-        logicHooks: ["useMotionValue", "useTransform", "useSpring"]
+        logicHooks: ["useMotionValue", "useTransform", "useSpring"],
+        previewComponent: <TestimonialWall />
     },
 
     // --- Immersive Scroll ---
@@ -325,7 +368,8 @@ export const registry: ComponentSchema[] = [
             "yPercent transitions from 100 to 0",
             "Scrub-controlled timing"
         ],
-        logicHooks: ["ScrollTrigger", "useGSAP", "pin: true"]
+        logicHooks: ["ScrollTrigger", "useGSAP", "pin: true"],
+        previewComponent: <LayeredCardReveal />
     },
     {
         id: "scroll-parallax-033",
@@ -354,7 +398,8 @@ export const registry: ComponentSchema[] = [
             "stroke-dashoffset animation",
             "Linked to scroll position"
         ],
-        logicHooks: ["ScrollTrigger", "useGSAP", "scrub: true"]
+        logicHooks: ["ScrollTrigger", "useGSAP", "scrub: true"],
+        previewComponent: <ProgressSVGPath />
     },
     {
         id: "scroll-zoom-035",
@@ -443,7 +488,8 @@ export const registry: ComponentSchema[] = [
             "Percentage-based sizing",
             "Stagger delay between segments"
         ],
-        logicHooks: ["useGSAP", "stagger", "SVG circle"]
+        logicHooks: ["useGSAP", "stagger", "SVG circle"],
+        previewComponent: <SVGDonutChart />
     },
     {
         id: "inter-noise-047",
@@ -748,7 +794,8 @@ export const registry: ComponentSchema[] = [
             "Individual rotate values",
             "Hover-triggered spread"
         ],
-        logicHooks: ["whileHover", "stagger", "rotation transforms"]
+        logicHooks: ["whileHover", "stagger", "rotation transforms"],
+        previewComponent: <StackingCardGallery />
     },
     {
         id: "inter-particles-050",
